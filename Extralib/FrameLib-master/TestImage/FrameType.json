@@ -1,0 +1,56 @@
+[
+  {
+    "Width": 1200,
+    "Height": 1800,
+    "Column": 2,
+    "Row": 2,
+    "Name": "Frame 4 hinh",
+    "Code": "4a",
+    "Description": null,
+    "BackgroundImages": null,
+    "ImageInFrame": {
+      "Width": 534,
+      "Height": 532,
+      "MarginTop": 40,
+      "MarginLeft": 34,
+      "MarginRight": 34,
+      "MarginBottom": 40,
+      "TopLeft": {
+        "IsEmpty": true,
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "Padding": 0,
+      "Image": null,
+      "AspectRatio": 0,
+      "DisplayOrder": 0
+    }
+  },
+  {
+    "Width": 1200,
+    "Height": 1800,
+    "Column": 2,
+    "Row": 3,
+    "Name": "Frame 6 hinh",
+    "Code": "6a",
+    "Description": null,
+    "BackgroundImages": null,
+    "ImageInFrame": {
+      "Width": 546,
+      "Height": 364,
+      "MarginTop": 37,
+      "MarginLeft": 27,
+      "MarginRight": 27,
+      "MarginBottom": 37,
+      "TopLeft": {
+        "IsEmpty": true,
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "Padding": 0,
+      "Image": null,
+      "AspectRatio": 0,
+      "DisplayOrder": 0
+    }
+  }
+]

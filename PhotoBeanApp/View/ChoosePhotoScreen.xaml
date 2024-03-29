@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="PhotoBeanApp.View.ChoosePhotoScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PhotoBeanApp.View"
+             mc:Ignorable="d" 
+             Background="#8EE1F8">
+    <Grid  Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Name="LeftGrid" Grid.Column="0">
+            <Grid Name="ChoosePhoto">
+            </Grid>
+        </Grid>
+        <Grid Name="RightGrid" Grid.Column="1">
+            <Label Content="Ảnh đã chụp" FontFamily="{StaticResource VietnameseFont}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+            <Grid Name="Photos" Margin="20">
+            </Grid>
+            <Button Name="ContinueButton" Content="Tiếp tục" Style="{StaticResource NextButtonStyle}" FontFamily="{StaticResource VietnameseFont}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="ContinueButton_Click" />
+        </Grid>
+    </Grid>
+</UserControl>

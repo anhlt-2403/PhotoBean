@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B524CA7-A63B-46BD-8E24-C00EE0449CE2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PhotoBeanApp</RootNamespace>
+    <AssemblyName>PhotoBeanApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Helper\Classes\ResizeAdorner.cs" />
+    <Compile Include="Helper\UserControls\Sticker.xaml.cs">
+      <DependentUpon>Sticker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BackgroundScreen.xaml.cs">
+      <DependentUpon>BackgroundScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChoosePhotoScreen.xaml.cs">
+      <DependentUpon>ChoosePhotoScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrameScreen.xaml.cs">
+      <DependentUpon>FrameScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GoodbyeScreen.xaml.cs">
+      <DependentUpon>GoodbyeScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PaymentScreen.xaml.cs">
+      <DependentUpon>PaymentScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SetUpScreen.xaml.cs">
+      <DependentUpon>SetUpScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StickerScreen.xaml.cs">
+      <DependentUpon>StickerScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TakePhotoScreen.xaml.cs">
+      <DependentUpon>TakePhotoScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WelcomeScreen.xaml.cs">
+      <DependentUpon>WelcomeScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WrappingStream.cs" />
+    <Page Include="Helper\UserControls\Sticker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\BackgroundScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChoosePhotoScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FrameScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\GoodbyeScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PaymentScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SetUpScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\StickerScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\TakePhotoScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WelcomeScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\SFPRODISPLAYBLACKITALIC.OTF" />
+    <Resource Include="Fonts\SFPRODISPLAYBOLD.OTF" />
+    <Resource Include="Fonts\SFPRODISPLAYHEAVYITALIC.OTF" />
+    <Resource Include="Fonts\SFPRODISPLAYLIGHTITALIC.OTF" />
+    <Resource Include="Fonts\SFPRODISPLAYMEDIUM.OTF" />
+    <Resource Include="Fonts\SFPRODISPLAYREGULAR.OTF" />
+    <Resource Include="Fonts\SFPRODISPLAYSEMIBOLDITALIC.OTF" />
+    <Resource Include="Fonts\SFPRODISPLAYTHINITALIC.OTF" />
+    <Resource Include="Fonts\SFPRODISPLAYULTRALIGHTITALIC.OTF" />
+    <Resource Include="Fonts\SFUIText-Bold.ttf" />
+    <Resource Include="Fonts\SFUIText-BoldItalic.ttf" />
+    <Resource Include="Fonts\SFUIText-Heavy.ttf" />
+    <Resource Include="Fonts\SFUIText-HeavyItalic.ttf" />
+    <Resource Include="Fonts\SFUIText-Light.ttf" />
+    <Resource Include="Fonts\SFUIText-LightItalic.ttf" />
+    <Resource Include="Fonts\SFUIText-Medium.ttf" />
+    <Resource Include="Fonts\SFUIText-MediumItalic.ttf" />
+    <Resource Include="Fonts\SFUIText-Regular.ttf" />
+    <Resource Include="Fonts\SFUIText-RegularItalic.ttf" />
+    <Resource Include="Fonts\SFUIText-Semibold.ttf" />
+    <Resource Include="Fonts\SFUIText-SemiboldItalic.ttf" />
+    <None Include="FrameType.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Frames\1cut\1a\default.png" />
+    <Resource Include="Frames\4cut\4a\background_2_2.png" />
+    <Resource Include="Frames\4cut\4a\background_2_3.png" />
+    <Resource Include="Frames\4cut\4a\default.png" />
+    <Resource Include="Frames\6cut\6a\2x6 .png" />
+    <Resource Include="Frames\6cut\6a\2x6 03.png" />
+    <Resource Include="Frames\6cut\6a\default.png" />
+    <Resource Include="Frames\6cut\6b\2.png" />
+    <Resource Include="Frames\6cut\6b\2x6 02.png" />
+    <Resource Include="Frames\6cut\6b\default.png" />
+    <Resource Include="Frames\6cut\6c\6x4 03.png" />
+    <Resource Include="Helper\Stickers\test1.jpg" />
+    <Resource Include="Helper\Stickers\test2.jpg" />
+    <Resource Include="Helper\Stickers\test3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Camera\Images\" />
+    <Folder Include="Camera\Temp\" />
+    <Folder Include="DriveImage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Extralib\EDSDKLib-1.1.2\EDSDKLib\EDSDKLib.csproj">
+      <Project>{15e99248-6161-46a4-9183-609ca62406a6}</Project>
+      <Name>EDSDKLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extralib\FrameLib-master\FrameLibNetFramework\FrameLibNetFramework.csproj">
+      <Project>{e9aabf99-a5c3-4745-99ab-a67484680d1d}</Project>
+      <Name>FrameLibNetFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

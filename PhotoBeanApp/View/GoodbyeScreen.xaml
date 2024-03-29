@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="PhotoBeanApp.View.GoodbyeScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PhotoBeanApp.View"
+             mc:Ignorable="d" 
+             Background="#8EE1F8">
+    <Grid Background="#FFFFFF" Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Name="LeftGrid" Grid.Column="0">
+            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Name="Print"/>
+            </WrapPanel>
+        </Grid>
+        <Grid Name="RightGrid" Grid.Column="1">
+            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Name="QRcodeImage"/>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</UserControl>
