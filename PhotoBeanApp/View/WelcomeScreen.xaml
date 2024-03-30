@@ -18,8 +18,10 @@
         </Grid.RowDefinitions>
 
         <Label Content="Photo Bean" FontFamily="{StaticResource VietnameseFont}" FontSize="55" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment ="Center"  Grid.Column="1" Grid.Row="0"/>
-        <Button Content="Bắt đầu" Style="{StaticResource StartButtonStyle}" FontFamily="{StaticResource VietnameseFont}" FontWeight="Bold" FontSize="40"  Width="208" Height="61" HorizontalAlignment="Center" VerticalAlignment="Center"
+        <Button Content="Bắt đầu" Style="{StaticResource StartButtonStyle}" FontFamily="{StaticResource VietnameseFont}" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"
                 Click="StartButton_Click" Grid.Column="1" Grid.Row="2"/>
-        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill" Grid.Column="1" Grid.Row="1"/>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Image Source="../Helper/Images/logo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill"/>
+        </Grid>
     </Grid>
 </UserControl>

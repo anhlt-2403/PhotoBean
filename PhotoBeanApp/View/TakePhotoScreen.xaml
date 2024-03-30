@@ -8,29 +8,29 @@
              Background="#8EE1F8">
     <Grid Margin="20" Background="#FFFFFF">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30" />
+            <RowDefinition Height="100" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
         
         
-        <Label Name="countdownLabel" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Foreground="Black"/>
-        <Label Name="countPhotoLable" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black"/>
+        <Label Name="countdownLabel" Grid.Column="1" Grid.Row="0" FontSize="40" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Foreground="Black"/>
+        <Label Name="countPhotoLable" Grid.Column="1" Grid.Row="0" FontSize="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="Black"/>
 
         <Grid Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Canvas x:Name="imageControl" Margin="10,37,10,10" Background="LightGray" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"
+            <Canvas x:Name="imageControl" Margin="1,1,1,1" Background="LightGray" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"
         Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"/>
             <Button Name="StartButton" Style="{StaticResource CustomButtonStyle}" FontFamily="{StaticResource VietnameseFont}" Content="Bắt đầu" Click="StartButton_Click" Panel.ZIndex="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <ProgressBar x:Name="MainProgressBar" Visibility="Hidden"/>
         </Grid>
         <Button Name="ReplayButton" Grid.Row="1" Grid.Column="0" Style="{StaticResource CustomButtonStyle}" FontFamily="{StaticResource VietnameseFont}" Content="Chụp lại" Click="ContinueButton_Click" Panel.ZIndex="5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20"/>
         <Button Name="ContinueButton" Grid.Row="1" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" FontFamily="{StaticResource VietnameseFont}" Content="Tiếp tục" Click="ContinueButton_Click" Panel.ZIndex="5" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20"/>
-        <Label Name="labelEmote" Grid.Row="2" Grid.Column="1"/>
+        <Label Name="labelEmote" Grid.Row="2" Grid.Column="1" FontSize="24"/>
     </Grid>
 </UserControl>

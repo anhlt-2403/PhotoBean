@@ -16,7 +16,7 @@
             </Grid>
         </Grid>
         <Grid Name="RightGrid" Grid.Column="1">
-            <Label Content="Ảnh đã chụp" FontFamily="{StaticResource VietnameseFont}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+            <Label Content="Ảnh đã chụp" FontSize="20" FontFamily="{StaticResource VietnameseFont}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
             <Grid Name="Photos" Margin="20">
             </Grid>
             <Button Name="ContinueButton" Content="Tiếp tục" Style="{StaticResource NextButtonStyle}" FontFamily="{StaticResource VietnameseFont}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="ContinueButton_Click" />

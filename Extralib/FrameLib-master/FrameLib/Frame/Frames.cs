@@ -1,5 +1,5 @@
-﻿using FrameLib.Utils;
-using static FrameLib.Constant.PhotoParemeters;
+﻿using FrameLib6.Utils;
+using static FrameLib6.Constant.PhotoParemeters;
 
 namespace FrameLib6.Frame
 {

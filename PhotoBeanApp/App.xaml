@@ -8,9 +8,9 @@
         <FontFamily x:Key="VietnameseFont">Arial Unicode MS</FontFamily>
 
         <Style x:Key="StartButtonStyle" TargetType="Button">
-            <Setter Property="FontSize" Value="24"/>
-            <Setter Property="Width" Value="208"/>
-            <Setter Property="Height" Value="61"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Width" Value="240"/>
+            <Setter Property="Height" Value="80"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="White"/>
@@ -83,9 +83,9 @@
         </Style>
 
         <Style x:Key="NextButtonStyle" TargetType="Button">
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Width" Value="80"/>
-            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="60"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="White"/>
@@ -111,9 +111,9 @@
         </Style>
 
         <Style x:Key="CustomButtonStyle" TargetType="Button">
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Width" Value="80"/>
-            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="60"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="White"/>
@@ -132,5 +132,60 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!-- FocusVisual -->
+        <Style x:Key="ButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border>
+                            <Rectangle Margin="2" StrokeThickness="1" Stroke="#60000000" StrokeDashArray="1 2" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Button -->
+        <Style x:Key="testingButton" TargetType="Button">
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}" />
+            <Setter Property="MinHeight" Value="23" />
+            <Setter Property="MinWidth" Value="75" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" CornerRadius="2" BorderThickness="1">
+                            <Border.BorderBrush>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStopCollection>
+                                            <GradientStop Color="{DynamicResource BorderLightColor}" Offset="0.0" />
+                                            <GradientStop Color="{DynamicResource BorderDarkColor}" Offset="1.0" />
+                                        </GradientStopCollection>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="{DynamicResource ControlLightColor}" Offset="0" />
+                                    <GradientStop Color="{DynamicResource ControlMediumColor}" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <!-- Other visual elements for your custom button -->
+                            <!-- For the complete sample, see Styling with ControlTemplates Sample. -->
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource PressedColor}" />
+                            </Trigger>
+                            <!-- Other triggers as needed -->
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Application.Resources>
 </Application>
