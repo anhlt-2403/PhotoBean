@@ -10,7 +10,7 @@ namespace PhotoBeanApp.Helper.Classes
         {
             if (values != null && values.Length == 2 && values[0] is double leftWidth && values[1] is double rightWidth)
             {
-                return leftWidth + rightWidth - 20;
+                return leftWidth + rightWidth - (leftWidth + rightWidth)/5*2;
             }
 
             return 200;
