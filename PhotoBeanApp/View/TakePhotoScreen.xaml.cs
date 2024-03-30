@@ -11,6 +11,7 @@ using System.Drawing.Imaging;
 using EOSDigital.API;
 using EOSDigital.SDK;
 using System.Threading.Tasks;
+using System.Threading;
 
 
 namespace PhotoBeanApp.View
@@ -156,7 +157,7 @@ namespace PhotoBeanApp.View
 
         private void StartTimer()
         {
-            remainingTimeInSeconds = 3;
+            remainingTimeInSeconds = 10;
             countdownLabel.Visibility = Visibility.Visible;
             countdownLabel.Content = remainingTimeInSeconds.ToString();
             countdownTimer.Start();
@@ -177,6 +178,7 @@ namespace PhotoBeanApp.View
                 if (!isPhotoTaken)
                 {
                     TakePhoto();
+                    Thread.Sleep(500);
                     isPhotoTaken = true;
                 }
                 if (isDownloadCompleted)

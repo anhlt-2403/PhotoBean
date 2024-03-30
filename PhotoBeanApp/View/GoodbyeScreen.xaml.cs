@@ -15,6 +15,7 @@ namespace PhotoBeanApp.View
     /// </summary>
     public partial class GoodbyeScreen : UserControl
     {
+        public event EventHandler ButtonContinueClick;
         private Bitmap _photo;
         public GoodbyeScreen(Bitmap photo)
         {
@@ -54,6 +55,12 @@ namespace PhotoBeanApp.View
                 bitmapImage.EndInit();
                 return bitmapImage;
             }
+        }
+
+        private void ContinueButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            ButtonContinueClick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

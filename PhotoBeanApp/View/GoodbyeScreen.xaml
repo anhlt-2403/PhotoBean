@@ -18,8 +18,10 @@
         </Grid>
         <Grid Name="RightGrid" Grid.Column="1">
             <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Name="QRcodeImage"/>
+                <Image Name="QRcodeImage" Height="400" Width="400"/>
+                <Label Content="Scan To Get Image" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
             </WrapPanel>
+            <Button Name="ContinueButton" Content="Tiếp tục" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="ContinueButton_Click" />
         </Grid>
     </Grid>
 </UserControl>

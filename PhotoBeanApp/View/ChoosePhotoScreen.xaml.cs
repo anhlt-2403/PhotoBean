@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace PhotoBeanApp.View
 {
@@ -20,7 +23,10 @@ namespace PhotoBeanApp.View
         private int numberOfCut;
         private int numberOfRows;
         private int numberOfColumns;
-
+        private DispatcherTimer countdownTimer;
+        private DispatcherTimer ProgressbarTime;
+        private int totalTimeInSeconds = 15;
+        private int elapsedTimeInSeconds = 0;
         public ChoosePhotoScreen(int numberOfCut, List<Image> imageList)
         {
             InitializeComponent();
@@ -29,6 +35,7 @@ namespace PhotoBeanApp.View
             numberOfColumns = 2;
             numberOfRows = numberOfCut / numberOfColumns;
             ContinueButton.Visibility = Visibility.Collapsed;
+            ContinueButton.IsEnabled =  true;
             InitializeEmptySlots();
             SetUpLeftGrid();
             SetUpRightGrid();
@@ -217,14 +224,33 @@ namespace PhotoBeanApp.View
                 }
             }
         }
-
-        private void ContinueButton_Click(object sender, RoutedEventArgs e)
+        public async Task StartProgressBar()
         {
+            MainProgressBar.Visibility = Visibility.Visible;
+            MainProgressBar.Maximum = totalTimeInSeconds;
+            elapsedTimeInSeconds = 0;
+
+            while (elapsedTimeInSeconds < totalTimeInSeconds)
+            {
+                MainProgressBar.Value = elapsedTimeInSeconds;
+                await Task.Delay(500);
+                elapsedTimeInSeconds++;
+            }
+
+            MainProgressBar.Value = totalTimeInSeconds;
+        }
+
+        public async void ContinueButton_Click(object sender, RoutedEventArgs e)
+        {
+            ContinueButton.IsEnabled = false;
             if(numberOfCut != 1)
             {
                 ReorderSelectedImages();
             }
+            await StartProgressBar();
+
             ButtonContinueClick?.Invoke(this, EventArgs.Empty);
+        
         }
     }
 }
