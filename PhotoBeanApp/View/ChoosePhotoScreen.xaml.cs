@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace PhotoBeanApp.View
 {
@@ -20,15 +23,19 @@ namespace PhotoBeanApp.View
         private int numberOfCut;
         private int numberOfRows;
         private int numberOfColumns;
-
+        private DispatcherTimer countdownTimer;
+        private DispatcherTimer ProgressbarTime;
+        private int totalTimeInSeconds = 15;
+        private int elapsedTimeInSeconds = 0;
         public ChoosePhotoScreen(int numberOfCut, List<Image> imageList)
         {
             InitializeComponent();
-            this.numberOfCut = numberOfCut;
+            this.numberOfCut = numberOfCut; 
             selectedImages = new List<Image>();
             numberOfColumns = 2;
             numberOfRows = numberOfCut / numberOfColumns;
             ContinueButton.Visibility = Visibility.Collapsed;
+            ContinueButton.IsEnabled =  true;
             InitializeEmptySlots();
             SetUpLeftGrid();
             SetUpRightGrid();
@@ -49,8 +56,8 @@ namespace PhotoBeanApp.View
 
         private void SetUpLeftGrid()
         {
-            double columnWidth = 250;
-            double rowHeight = 200;
+            double columnWidth = 300;
+            double rowHeight = 250;
             ChoosePhoto.ColumnDefinitions.Clear();
             ChoosePhoto.RowDefinitions.Clear();
 
@@ -87,8 +94,8 @@ namespace PhotoBeanApp.View
         }
         private void SetUpRightGrid()
         {
-            double columnWidth = 200;
-            double rowHeight = 200;
+            double columnWidth = 300;
+            double rowHeight = 250;
 
             for (int i = 0; i < numberOfColumns; i++)
             {
@@ -150,7 +157,7 @@ namespace PhotoBeanApp.View
                     ChoosePhoto.Children.Add(clickedImage);
                     Tuple<int, int> emptySlot = FindEmptySlot();
                     selectedImages.Add(clickedImage);
-                    if (ChoosePhoto.Children.Count == numberOfCut)
+                    if(ChoosePhoto.Children.Count == numberOfCut)
                     {
                         ContinueButton.Visibility = Visibility.Visible;
                     }
@@ -163,7 +170,7 @@ namespace PhotoBeanApp.View
             }
             else if (ChoosePhoto.Children.Contains(clickedImage))
             {
-                ContinueButton.Visibility = Visibility.Collapsed;
+                ContinueButton.Visibility= Visibility.Collapsed;
                 ChoosePhoto.Children.Remove(clickedImage);
                 selectedImages.Remove(clickedImage);
 
@@ -217,14 +224,33 @@ namespace PhotoBeanApp.View
                 }
             }
         }
-
-        private void ContinueButton_Click(object sender, RoutedEventArgs e)
+        public async Task StartProgressBar()
         {
-            if (numberOfCut != 1)
+            MainProgressBar.Visibility = Visibility.Visible;
+            MainProgressBar.Maximum = totalTimeInSeconds;
+            elapsedTimeInSeconds = 0;
+
+            while (elapsedTimeInSeconds < totalTimeInSeconds)
+            {
+                MainProgressBar.Value = elapsedTimeInSeconds;
+                await Task.Delay(500);
+                elapsedTimeInSeconds++;
+            }
+
+            MainProgressBar.Value = totalTimeInSeconds;
+        }
+
+        public async void ContinueButton_Click(object sender, RoutedEventArgs e)
+        {
+            ContinueButton.IsEnabled = false;
+            if(numberOfCut != 1)
             {
                 ReorderSelectedImages();
             }
+            await StartProgressBar();
+
             ButtonContinueClick?.Invoke(this, EventArgs.Empty);
+        
         }
     }
 }
