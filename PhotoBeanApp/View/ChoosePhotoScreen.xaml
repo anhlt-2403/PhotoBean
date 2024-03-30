@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
 
         <ProgressBar x:Name="MainProgressBar" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" 
-             Height="20" Panel.ZIndex="40" Visibility="Hidden">
+             Height="20" Panel.ZIndex="40">
             <ProgressBar.Width>
                 <MultiBinding Converter="{StaticResource AddWidthConverter}">
                     <Binding Path="ActualWidth" ElementName="LeftGrid"/>

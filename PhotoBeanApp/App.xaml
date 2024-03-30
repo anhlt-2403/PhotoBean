@@ -84,7 +84,7 @@
 
         <Style x:Key="NextButtonStyle" TargetType="Button">
             <Setter Property="FontSize" Value="24"/>
-            <Setter Property="Width" Value="140"/>
+            <Setter Property="Width" Value="180"/>
             <Setter Property="Height" Value="60"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -112,7 +112,7 @@
 
         <Style x:Key="CustomButtonStyle" TargetType="Button">
             <Setter Property="FontSize" Value="22"/>
-            <Setter Property="Width" Value="140"/>
+            <Setter Property="Width" Value="180"/>
             <Setter Property="Height" Value="60"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
