@@ -7,12 +7,15 @@
              mc:Ignorable="d" 
              Background="#8EE1F8">
     <Grid  Margin="20">
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid Name="LeftGrid" Grid.Column="0">
+            <ProgressBar x:Name="MainProgressBar" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Value="0" Height="10" Panel.ZIndex="40"/>
             <Grid Name="ChoosePhoto">
+               
             </Grid>
         </Grid>
         <Grid Name="RightGrid" Grid.Column="1">

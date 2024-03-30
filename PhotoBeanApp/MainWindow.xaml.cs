@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using FrameLib.Frame;
 using FrameLib.Utils;
+using System.Threading.Tasks;
 //using TestImage.Frame;
 //using TestImage.Utils;
 
@@ -29,7 +30,7 @@ namespace PhotoBeanApp
         List<System.Windows.Controls.Image> imageList;
         Frames frames;
         private DispatcherTimer countdownTimer;
-        private int remainingTimeInSeconds = 20;
+        private int remainingTimeInSeconds = 60;
         private int currentScreenIndex;
         string currentDirectory = Directory.GetCurrentDirectory();
         string projectDirectory;
@@ -96,7 +97,7 @@ namespace PhotoBeanApp
                 case 4:
                     if (contentControl.Content is ChoosePhotoScreen choosePhotoScreen)
                     {
-                        ChoosePhotoScreen_ButtonContinueClick(choosePhotoScreen, EventArgs.Empty);
+                        ChoosePhotoScreen_ButtonContinueClickAsync(choosePhotoScreen, EventArgs.Empty);
                     }
                     break;
                 case 5:
@@ -122,15 +123,25 @@ namespace PhotoBeanApp
 
         private void StartTimer()
         {
-            remainingTimeInSeconds = 20;
+            remainingTimeInSeconds = 60;
             totalTime.Content = remainingTimeInSeconds.ToString();
             countdownTimer.Start();
         }
         private void ResetApp()
         {
-            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
+            System.Diagnostics.Process currentProcess = System.Diagnostics.Process.GetCurrentProcess();
+            System.Diagnostics.Process[] processes = System.Diagnostics.Process.GetProcessesByName(currentProcess.ProcessName);
+            foreach (System.Diagnostics.Process process in processes)
+            {
+                if (process.Id != currentProcess.Id)
+                {
+                    process.Kill();
+                }
+            }
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
         }
+
 
         private void DeleteJPGFilesInDirectory(string directory)
         {
@@ -194,25 +205,12 @@ namespace PhotoBeanApp
             takePhotoScreen.MainCamera.CloseSession();
             takePhotoScreen.StopTimer();
             ChoosePhotoScreen choosePhotoScreen = new ChoosePhotoScreen(numberOfCut, imageList);
-            choosePhotoScreen.ButtonContinueClick += ChoosePhotoScreen_ButtonContinueClick;
+            choosePhotoScreen.ButtonContinueClick += ChoosePhotoScreen_ButtonContinueClickAsync;
             contentControl.Content = choosePhotoScreen;
             StartTimer();
         }
 
-        private void ChoosePhotoScreen_ButtonContinueClick(object sender, EventArgs e)
-        {
-            currentScreenIndex = 7;
-            ChoosePhotoScreen choosePhotoScreen = (ChoosePhotoScreen)sender;
-            imageList = choosePhotoScreen.selectedImages;
-            FrameScreen frameScreen = new FrameScreen(imageList, frames, numberOfCut);
-            System.Drawing.Bitmap image = frameScreen.imgTemp;
-            string codeFrameType = frameScreen.codeFrameType;
-            BackgroundScreen backgroundScreen = new BackgroundScreen(image, codeFrameType, frames, numberOfCut);
-            Bitmap photo = backgroundScreen.imgTemp;
-            GoodbyeScreen goodbyeScreen = new GoodbyeScreen(photo);
-            contentControl.Content = goodbyeScreen;
-            StartTimer();
-        }
+
 
         private void FrameScreen_ButtonContinueClick(object sender, EventArgs e)
         {
@@ -242,6 +240,26 @@ namespace PhotoBeanApp
             Bitmap photo = stickerScreen.imTemp;
             //GoodbyeScreen goodbyeScreen = new GoodbyeScreen(photo);
             //contentControl.Content = goodbyeScreen;
+        }
+        private  void ChoosePhotoScreen_ButtonContinueClickAsync(object sender, EventArgs e)
+        {
+            currentScreenIndex = 7;
+            ChoosePhotoScreen choosePhotoScreen = (ChoosePhotoScreen)sender;
+            imageList = choosePhotoScreen.selectedImages;
+            FrameScreen frameScreen = new FrameScreen(imageList, frames, numberOfCut);
+            Bitmap image = frameScreen.imgTemp;
+            string codeFrameType = frameScreen.codeFrameType;
+            BackgroundScreen backgroundScreen = new BackgroundScreen(image, codeFrameType, frames, numberOfCut);
+            Bitmap photo = backgroundScreen.imgTemp;
+            GoodbyeScreen goodbyeScreen = new GoodbyeScreen(photo);
+            goodbyeScreen.ButtonContinueClick += GoodbyeScreen_ButtonContinueClick;
+            contentControl.Content = goodbyeScreen;
+            StartTimer();
+        }
+
+        private void GoodbyeScreen_ButtonContinueClick(object sender, EventArgs e)
+        {
+            ResetApp();
         }
     }
 
