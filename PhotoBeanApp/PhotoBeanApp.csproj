@@ -62,6 +62,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helper\Classes\AddWidthConverter.cs" />
     <Compile Include="Helper\Classes\ResizeAdorner.cs" />
     <Compile Include="Helper\UserControls\Sticker.xaml.cs">
       <DependentUpon>Sticker.xaml</DependentUpon>
@@ -186,7 +187,6 @@
     <Resource Include="Fonts\SFUIText-RegularItalic.ttf" />
     <Resource Include="Fonts\SFUIText-Semibold.ttf" />
     <Resource Include="Fonts\SFUIText-SemiboldItalic.ttf" />
-    <None Include="Credentials.json" />
     <None Include="FrameType.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
