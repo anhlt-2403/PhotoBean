@@ -296,18 +296,6 @@ namespace PhotoBeanApp.View
                     }
 
                 }
-                else
-                {
-                    string[] files = Directory.GetFiles(tempDirectory);
-
-                    if (files.Length > 0)
-                    {
-                        foreach (string file in files)
-                        {
-                            File.Delete(file);
-                        }
-                    }
-                }
             }
         }
         private void StartLiveView()
