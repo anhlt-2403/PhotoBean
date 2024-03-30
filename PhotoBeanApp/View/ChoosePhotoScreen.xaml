@@ -4,29 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PhotoBeanApp.View"
-             xmlns:helpclasses="clr-namespace:PhotoBeanApp.Helper.Classes"
              mc:Ignorable="d" 
              Background="#8EE1F8">
-    <UserControl.Resources>
-        <helpclasses:AddWidthConverter x:Key="AddWidthConverter"/>
-    </UserControl.Resources>
     <Grid  Margin="20">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-
-        <ProgressBar x:Name="MainProgressBar" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" 
-             Height="20" Panel.ZIndex="40">
-            <ProgressBar.Width>
-                <MultiBinding Converter="{StaticResource AddWidthConverter}">
-                    <Binding Path="ActualWidth" ElementName="LeftGrid"/>
-                    <Binding Path="ActualWidth" ElementName="RightGrid"/>
-                </MultiBinding>
-            </ProgressBar.Width>
-            </ProgressBar>
-            <Grid Name="LeftGrid" Grid.Column="0">
+        <Grid Name="LeftGrid" Grid.Column="0">
+            <ProgressBar x:Name="MainProgressBar" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Value="0" Height="10" Panel.ZIndex="40"/>
             <Grid Name="ChoosePhoto">
                
             </Grid>

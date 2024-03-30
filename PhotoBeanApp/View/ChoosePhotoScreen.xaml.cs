@@ -56,8 +56,8 @@ namespace PhotoBeanApp.View
 
         private void SetUpLeftGrid()
         {
-            double columnWidth = ChoosePhoto.ActualWidth / numberOfColumns;
-            double rowHeight = ChoosePhoto.ActualHeight / numberOfRows;
+            double columnWidth = 250;
+            double rowHeight = 200;
             ChoosePhoto.ColumnDefinitions.Clear();
             ChoosePhoto.RowDefinitions.Clear();
 
@@ -94,8 +94,8 @@ namespace PhotoBeanApp.View
         }
         private void SetUpRightGrid()
         {
-            double columnWidth = Photos.ActualWidth / numberOfColumns;
-            double rowHeight = Photos.ActualHeight / (numberOfRows + 1);
+            double columnWidth = 200;
+            double rowHeight = 200;
 
             for (int i = 0; i < numberOfColumns; i++)
             {
