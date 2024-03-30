@@ -67,6 +67,7 @@
     <Compile Include="Helper\UserControls\Sticker.xaml.cs">
       <DependentUpon>Sticker.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProbabilityDetail.cs" />
     <Compile Include="View\BackgroundScreen.xaml.cs">
       <DependentUpon>BackgroundScreen.xaml</DependentUpon>
     </Compile>
