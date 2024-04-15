@@ -5,7 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
              Background="White">
-    <Grid Background="#8EE1F8" Margin="0">
+    <Grid Margin="0">
+        <Grid.Background>
+            <ImageBrush ImageSource="../Helper/Images/main-background.jpg" Stretch="Fill"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="500"/>
@@ -17,7 +20,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Content="Photo Bean" FontFamily="{StaticResource VietnameseFont}" FontSize="55" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment ="Center"  Grid.Column="1" Grid.Row="0"/>
+        <Label Content="Photo Bean" FontFamily="{StaticResource VietnameseFont}" FontSize="55" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment ="Center"  Grid.Column="1" Grid.Row="0"/>
         <Button Content="Bắt đầu" Style="{StaticResource StartButtonStyle}" FontFamily="{StaticResource VietnameseFont}" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"
                 Click="StartButton_Click" Grid.Column="1" Grid.Row="2"/>
         <Grid Grid.Column="1" Grid.Row="1">

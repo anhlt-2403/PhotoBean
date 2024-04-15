@@ -64,8 +64,14 @@
     </ApplicationDefinition>
     <Compile Include="Helper\Classes\AddWidthConverter.cs" />
     <Compile Include="Helper\Classes\ResizeAdorner.cs" />
+    <Compile Include="Helper\UserControls\CustomButton.xaml.cs">
+      <DependentUpon>CustomButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helper\UserControls\Sticker.xaml.cs">
       <DependentUpon>Sticker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\UserControls\UpDownField.xaml.cs">
+      <DependentUpon>UpDownField.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\BackgroundScreen.xaml.cs">
       <DependentUpon>BackgroundScreen.xaml</DependentUpon>
@@ -95,9 +101,17 @@
       <DependentUpon>WelcomeScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="WrappingStream.cs" />
+    <Page Include="Helper\UserControls\CustomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Helper\UserControls\Sticker.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Helper\UserControls\UpDownField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -230,6 +244,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Helper\Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Helper\Images\main-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Helper\Images\background2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -119,19 +119,9 @@ namespace PhotoBeanApp.View
 
         private void ButtonNext_Click(object sender, RoutedEventArgs e)
         {
+            numberOfPrint = upDownField.getNum();
             ButtonNextClick?.Invoke(this, EventArgs.Empty);
         }
 
-        private void increaseButton_Click(object sender, RoutedEventArgs e)
-        {
-            numberOfPrint = Int32.Parse(printLabel.Content.ToString());
-            printLabel.Content = $"{++numberOfPrint}";
-        }
-
-        private void decreaseButton_Click(object sender, RoutedEventArgs e)
-        {
-            numberOfPrint = Int32.Parse(printLabel.Content.ToString());
-            printLabel.Content = $"{--numberOfPrint}";
-        }
     }
 }

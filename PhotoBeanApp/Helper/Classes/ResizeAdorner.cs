@@ -44,13 +44,27 @@ namespace PhotoBeanApp.Helper.Classes
             //    sticker.Height = Math.Max(sticker.Height + e.VerticalChange, 0);
             //}
 
-
             //ratio dragging
-
-            if (sticker != null && canvas != null)
+            if (sticker != null)
             {
                 double widthChange = e.HorizontalChange;
                 double heightChange = e.VerticalChange;
+
+                if (sticker.stickerImage.Source != null && sticker.stickerImage.Source.Width > 0 && sticker.stickerImage.Source.Height > 0)
+                {
+                    double aspectRatio = sticker.stickerImage.Source.Width / sticker.stickerImage.Source.Height;
+
+                    // Adjust width and height change based on aspect ratio
+                    if (Math.Abs(widthChange) > Math.Abs(heightChange))
+                    {
+                        heightChange = widthChange / aspectRatio;
+                    }
+                    else
+                    {
+                        widthChange = heightChange * aspectRatio;
+                    }
+                }
+
 
                 double canvasWidth = canvas.ActualWidth;
                 double canvasHeight = canvas.ActualHeight;
@@ -68,6 +82,7 @@ namespace PhotoBeanApp.Helper.Classes
                     sticker.Height = Math.Max(sticker.Height + heightChange, 0);
                 }
             }
+
 
 
             //update temporary sticker size

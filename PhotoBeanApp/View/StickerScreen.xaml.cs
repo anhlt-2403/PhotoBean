@@ -13,6 +13,8 @@ using FrameLib.Render;
 using WPFStickerDemo;
 using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Media.Imaging;
+using System.Windows.Documents;
+using PhotoBeanApp.Helper.Classes;
 
 namespace PhotoBeanApp.View
 {
@@ -136,6 +138,11 @@ namespace PhotoBeanApp.View
 
             canvasSticker.Children.Add(sticker);
 
+            AdornerLayer adornerLayer = AdornerLayer.GetAdornerLayer(sticker);
+            if (adornerLayer != null)
+            {
+                adornerLayer.Add(new ResizeAdorner(sticker, (imageRealWidth / Photo.ActualWidth), (imageRealWidth / Photo.ActualWidth)));
+            }
         }
         private void Sticker_MouseLeftButtonUp(object sender,MouseButtonEventArgs e)
         {
