@@ -6,7 +6,10 @@
              xmlns:local="clr-namespace:PhotoBeanApp.View"
              mc:Ignorable="d" 
               Background="#8EE1F8" >
-    <Grid Background="#8EE1F8" Margin="20">
+    <Grid Margin="20">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="../Helper/Images/background2.jpg" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />

@@ -72,7 +72,7 @@ namespace PhotoBeanApp.View
                 return;
             }
 
-            string[] imageFiles = Directory.GetFiles(folderPath, "*.jpg");
+            string[] imageFiles = Directory.GetFiles(folderPath, "*.png");
 
             foreach (string imagePath in imageFiles)
             {

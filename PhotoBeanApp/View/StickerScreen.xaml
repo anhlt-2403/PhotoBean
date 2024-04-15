@@ -7,7 +7,10 @@
              namespace:PhotoBeanApp.View"
              mc:Ignorable="d"
              Background="#8EE1F8">
-    <Grid Background="#FFFFFF" Margin="20">
+    <Grid Margin="20">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="../Helper/Images/background2.jpg" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -15,7 +18,7 @@
 
         <Grid Grid.Column="0">
             <Image Name="Photo" Panel.ZIndex="1"></Image>
-            <Image Name="Bin" Source="/Images/Bin.png" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20" Opacity="0.5" Panel.ZIndex="2"></Image>
+            <Image Name="Bin" Source="../Helper/Images/bin.png" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20" Opacity="0.5" Panel.ZIndex="2"></Image>
             <Canvas Name="canvasSticker"  AllowDrop="True" Background="Transparent" DragOver="canvas_DragOver" Panel.ZIndex="3">
             </Canvas>
         </Grid>

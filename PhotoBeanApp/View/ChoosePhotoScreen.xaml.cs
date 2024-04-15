@@ -36,10 +36,13 @@ namespace PhotoBeanApp.View
             numberOfRows = numberOfCut / numberOfColumns;
             ContinueButton.Visibility = Visibility.Collapsed;
             ContinueButton.IsEnabled =  true;
+            LoadPhotos(imageList);
+        }
+        private void ChoosePhoto_Loaded(object sender, RoutedEventArgs e)
+        {
             InitializeEmptySlots();
             SetUpLeftGrid();
             SetUpRightGrid();
-            LoadPhotos(imageList);
         }
 
         private void InitializeEmptySlots()
@@ -57,7 +60,7 @@ namespace PhotoBeanApp.View
         private void SetUpLeftGrid()
         {
             double columnWidth = 250;
-            double rowHeight = 200;
+            double rowHeight = 180;
             ChoosePhoto.ColumnDefinitions.Clear();
             ChoosePhoto.RowDefinitions.Clear();
 
@@ -90,12 +93,12 @@ namespace PhotoBeanApp.View
 
             ChoosePhoto.HorizontalAlignment = HorizontalAlignment.Center;
             ChoosePhoto.VerticalAlignment = VerticalAlignment.Center;
-            ChoosePhoto.Background = Brushes.White;
+            ChoosePhoto.Background = Brushes.LightCoral;
         }
         private void SetUpRightGrid()
         {
-            double columnWidth = 200;
-            double rowHeight = 200;
+            double columnWidth = 250;
+            double rowHeight = 180;
 
             for (int i = 0; i < numberOfColumns; i++)
             {
@@ -252,5 +255,7 @@ namespace PhotoBeanApp.View
             ButtonContinueClick?.Invoke(this, EventArgs.Empty);
         
         }
+
+        
     }
 }
