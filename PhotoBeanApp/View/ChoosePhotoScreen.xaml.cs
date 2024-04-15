@@ -224,30 +224,30 @@ namespace PhotoBeanApp.View
                 }
             }
         }
-        public async Task StartProgressBar()
-        {
-            MainProgressBar.Visibility = Visibility.Visible;
-            MainProgressBar.Maximum = totalTimeInSeconds;
-            elapsedTimeInSeconds = 0;
+        //public async Task StartProgressBar()
+        //{
+        //    MainProgressBar.Visibility = Visibility.Visible;
+        //    MainProgressBar.Maximum = totalTimeInSeconds;
+        //    elapsedTimeInSeconds = 0;
 
-            while (elapsedTimeInSeconds < totalTimeInSeconds)
-            {
-                MainProgressBar.Value = elapsedTimeInSeconds;
-                await Task.Delay(500);
-                elapsedTimeInSeconds++;
-            }
+        //    while (elapsedTimeInSeconds < totalTimeInSeconds)
+        //    {
+        //        MainProgressBar.Value = elapsedTimeInSeconds;
+        //        await Task.Delay(500);
+        //        elapsedTimeInSeconds++;
+        //    }
 
-            MainProgressBar.Value = totalTimeInSeconds;
-        }
+        //    MainProgressBar.Value = totalTimeInSeconds;
+        //}
 
-        public async void ContinueButton_Click(object sender, RoutedEventArgs e)
+        public void ContinueButton_Click(object sender, RoutedEventArgs e)
         {
             ContinueButton.IsEnabled = false;
             if(numberOfCut != 1)
             {
                 ReorderSelectedImages();
             }
-            await StartProgressBar();
+            //await StartProgressBar();
 
             ButtonContinueClick?.Invoke(this, EventArgs.Empty);
         

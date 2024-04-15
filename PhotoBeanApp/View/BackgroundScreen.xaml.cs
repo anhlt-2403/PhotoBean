@@ -87,8 +87,6 @@ namespace PhotoBeanApp.View
                 }
             }
             imgTemp = RenderManager.GhepBackground(frameList.GetType(codeFrameType), photo, "default.png");
-            string imageDirectory = Path.Combine(projectDirectory, $"DriveImage");
-            imgTemp.Save(imageDirectory + "\\temp.jpg");
             Print.Source = ConvertToBitmapSource(imgTemp);
         }
 

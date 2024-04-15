@@ -157,7 +157,7 @@ namespace PhotoBeanApp.View
 
         private void StartTimer()
         {
-            remainingTimeInSeconds = 10;
+            remainingTimeInSeconds = 3;
             countdownLabel.Visibility = Visibility.Visible;
             countdownLabel.Content = remainingTimeInSeconds.ToString();
             countdownTimer.Start();

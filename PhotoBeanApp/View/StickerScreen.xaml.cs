@@ -23,18 +23,19 @@ namespace PhotoBeanApp.View
     {
         public event EventHandler ButtonContinueClick;
         private List<IconInImage> _stickerList = new List<IconInImage>();
-        public Bitmap imTemp { get; set; }
+        public Bitmap imgTemp { get; set; }
+        string currentDirectory = Directory.GetCurrentDirectory();
+        string projectDirectory;
         public StickerScreen(Bitmap photo)
         {
             InitializeComponent();
-            string currentDirectory = Directory.GetCurrentDirectory();
-            string projectDirectory = Directory.GetParent(currentDirectory).Parent.Parent.FullName;
+
+            projectDirectory = Directory.GetParent(currentDirectory).Parent.FullName;
             string stickerDirectory = Path.Combine(projectDirectory, $"Helper\\Stickers");
             LoadSticker(stickerDirectory);
             Bin.Visibility = Visibility.Hidden;
             Photo.Loaded += Photo_Loaded;
             Photo.Source = ConvertToBitmapSource(photo);
-
         }
         private BitmapSource ConvertToBitmapSource(Bitmap bitmap)
         {
@@ -336,7 +337,9 @@ namespace PhotoBeanApp.View
         
         private void ContinueButton_Click(object sender, RoutedEventArgs e)
         {
-            imTemp = RenderManager.RenderIcons(ConvertBitmapImageToBitmap(Photo.Source as BitmapImage), _stickerList);
+            imgTemp = RenderManager.RenderIcons(ConvertBitmapImageToBitmap(Photo.Source as BitmapImage), _stickerList);
+            string imageDirectory = Path.Combine(projectDirectory, $"DriveImage");
+            imgTemp.Save(imageDirectory + "\\temp.jpg");
             ButtonContinueClick?.Invoke(this, EventArgs.Empty);
         }
     }

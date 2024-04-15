@@ -97,7 +97,7 @@ namespace PhotoBeanApp
                 case 4:
                     if (contentControl.Content is ChoosePhotoScreen choosePhotoScreen)
                     {
-                        ChoosePhotoScreen_ButtonContinueClickAsync(choosePhotoScreen, EventArgs.Empty);
+                        ChoosePhotoScreen_ButtonContinueClick(choosePhotoScreen, EventArgs.Empty);
                     }
                     break;
                 case 5:
@@ -166,14 +166,11 @@ namespace PhotoBeanApp
         private void WelcomeScreen_StartButtonClick(object sender, EventArgs e)
         {
 
-            //SetUpScreen setUpScreen = new SetUpScreen();
-            //setUpScreen.ButtonNextClick += SetUpScreen_ButtonNextClick;
-            //contentControl.Content = setUpScreen;
-            //setUpScreen.LoadFrames(setUpScreen.numberOfCut);
+            SetUpScreen setUpScreen = new SetUpScreen();
+            setUpScreen.ButtonNextClick += SetUpScreen_ButtonNextClick;
+            contentControl.Content = setUpScreen;
+            setUpScreen.LoadFrames(setUpScreen.numberOfCut);
             currentScreenIndex = 3;
-            TakePhotoScreen takePhotoScreen = new TakePhotoScreen(1, 1);
-            takePhotoScreen.ContinueButtonClick += TakePhotoScreen_ContinueButtonClick;
-            contentControl.Content = takePhotoScreen;
             StartTimer();
         }
         private void SetUpScreen_ButtonNextClick(object sender, EventArgs e)
@@ -205,7 +202,7 @@ namespace PhotoBeanApp
             takePhotoScreen.MainCamera.CloseSession();
             takePhotoScreen.StopTimer();
             ChoosePhotoScreen choosePhotoScreen = new ChoosePhotoScreen(numberOfCut, imageList);
-            choosePhotoScreen.ButtonContinueClick += ChoosePhotoScreen_ButtonContinueClickAsync;
+            choosePhotoScreen.ButtonContinueClick += ChoosePhotoScreen_ButtonContinueClick;
             contentControl.Content = choosePhotoScreen;
             StartTimer();
         }
@@ -227,33 +224,26 @@ namespace PhotoBeanApp
         {
             BackgroundScreen backgroundScreen = (BackgroundScreen)sender;
             Bitmap photo = backgroundScreen.imgTemp;
-            GoodbyeScreen goodbyeScreen = new GoodbyeScreen(photo);
-            contentControl.Content = goodbyeScreen;
-            //StickerScreen stickerScreen = new StickerScreen(photo);
-            //stickerScreen.ButtonContinueClick += StickerScreen_ButtonContinueClick;
-            //contentControl.Content = stickerScreen;
+            StickerScreen stickerScreen = new StickerScreen(photo);
+            stickerScreen.ButtonContinueClick += StickerScreen_ButtonContinueClick;
+            contentControl.Content = stickerScreen;
         }
 
         private void StickerScreen_ButtonContinueClick(object sender, EventArgs e)
         {
             StickerScreen stickerScreen = (StickerScreen)sender;
-            Bitmap photo = stickerScreen.imTemp;
-            //GoodbyeScreen goodbyeScreen = new GoodbyeScreen(photo);
-            //contentControl.Content = goodbyeScreen;
+            Bitmap photo = stickerScreen.imgTemp;
+            GoodbyeScreen goodbyeScreen = new GoodbyeScreen(photo);
+            contentControl.Content = goodbyeScreen;
         }
-        private  void ChoosePhotoScreen_ButtonContinueClickAsync(object sender, EventArgs e)
+        private  void ChoosePhotoScreen_ButtonContinueClick(object sender, EventArgs e)
         {
             currentScreenIndex = 7;
             ChoosePhotoScreen choosePhotoScreen = (ChoosePhotoScreen)sender;
             imageList = choosePhotoScreen.selectedImages;
             FrameScreen frameScreen = new FrameScreen(imageList, frames, numberOfCut);
-            Bitmap image = frameScreen.imgTemp;
-            string codeFrameType = frameScreen.codeFrameType;
-            BackgroundScreen backgroundScreen = new BackgroundScreen(image, codeFrameType, frames, numberOfCut);
-            Bitmap photo = backgroundScreen.imgTemp;
-            GoodbyeScreen goodbyeScreen = new GoodbyeScreen(photo);
-            goodbyeScreen.ButtonContinueClick += GoodbyeScreen_ButtonContinueClick;
-            contentControl.Content = goodbyeScreen;
+            frameScreen.ButtonContinueClick += FrameScreen_ButtonContinueClick;
+            contentControl.Content = frameScreen;
             StartTimer();
         }
 
