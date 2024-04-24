@@ -15,15 +15,15 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <SolidColorBrush x:Key="Button.Static.Background" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF464444"/>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF6AC6E8"/>
         <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
@@ -36,7 +36,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" CornerRadius="50" BorderBrush="{x:Null}" BorderThickness="{TemplateBinding BorderThickness}" Background="#FF464444" SnapsToDevicePixels="true">
+                        <Border x:Name="border" CornerRadius="50" BorderBrush="{x:Null}" BorderThickness="{TemplateBinding BorderThickness}" Background="#FF6AC6E8" SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -61,15 +61,15 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <SolidColorBrush x:Key="Button.Static.Background2" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.Static.Border2" Color="#FF464444"/>
+        <SolidColorBrush x:Key="Button.Static.Background2" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.Static.Border2" Color="#FF6AC6E8"/>
         <SolidColorBrush x:Key="Button.MouseOver.Background2" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border2" Color="#FF464444"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border2" Color="#FF6AC6E8"/>
         <SolidColorBrush x:Key="Button.Pressed.Background2" Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border2" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background2" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border2" Color="#FF464444"/>
-        <SolidColorBrush x:Key="Button.Disabled.Foreground2" Color="#FF464444"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border2" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background2" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border2" Color="#FF6AC6E8"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground2" Color="#FF6AC6E8"/>
         <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
@@ -82,7 +82,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" CornerRadius="30" BorderBrush="{x:Null}" BorderThickness="{TemplateBinding BorderThickness}" Background="#FF292929" SnapsToDevicePixels="true">
+                        <Border x:Name="border" CornerRadius="30" BorderBrush="{x:Null}" BorderThickness="{TemplateBinding BorderThickness}" Background="#FF6AC6E8" SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="6.933,-1,6.933,9" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="15" Content="____"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -119,7 +119,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" CornerRadius="30" BorderBrush="{x:Null}" BorderThickness="{TemplateBinding BorderThickness}" Background="#FF292929" SnapsToDevicePixels="true">
+                        <Border x:Name="border" CornerRadius="30" BorderBrush="{x:Null}" BorderThickness="{TemplateBinding BorderThickness}" Background="#FF6AC6E8" SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="5,-2,4,1" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="24" Content="+" Width="14"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -146,9 +146,9 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Rectangle Fill="#FFE6E6E6" HorizontalAlignment="Left" Height="78" Margin="1,3,0,0" VerticalAlignment="Top" Width="222" RadiusY="40.475" RadiusX="40.475"/>
+        <Rectangle Fill="#FFD7E9E5" HorizontalAlignment="Left" Height="78" Margin="1,3,0,0" VerticalAlignment="Top" Width="222" RadiusY="40.475" RadiusX="40.475"/>
         <Button Name="btn_Num" Content="0" HorizontalAlignment="Left" Height="66" Margin="79,9,0,0" VerticalAlignment="Top" Width="66" Style="{DynamicResource ButtonStyle1}" Foreground="#FFF7F7F7" FontSize="24"/>
-        <Button Name="btn_MinNum" Content="___" HorizontalAlignment="Left" Height="30" Margin="31,27,0,0" VerticalAlignment="Top" Width="30" Style="{DynamicResource ButtonStyle2}" Foreground="White" FontSize="11" FontWeight="Bold" FontFamily="Segoe UI Black" Click="btn_MinNum_Click"/>
+        <Button Name="btn_MinNum" Content="___" HorizontalAlignment="Left" Height="30" Margin="31,27,0,0" VerticalAlignment="Top" Width="30" Style="{DynamicResource ButtonStyle2}" Foreground="White" FontSize="11" FontWeight="Bold" FontFamily="Segoe UI Black" Click="btn_MinNum_Click" Background="#FF00949B" BorderBrush="{x:Null}"/>
         <Button Name="btn_PlusNum" Content="+" HorizontalAlignment="Left" Height="30" Margin="163,27,0,0" VerticalAlignment="Top" Width="30" Style="{DynamicResource ButtonStyle3}" Foreground="White" FontSize="18" Click="btn_PlusNum_Click"/>
 
     </Grid>

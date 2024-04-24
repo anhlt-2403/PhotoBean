@@ -20,14 +20,14 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <UniformGrid Name="ListNumberOfCut" Rows="1" Grid.ColumnSpan="2" Height="70" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,20,0,0">
+        <UniformGrid Name="ListNumberOfCut" Rows="1" Grid.Column="1" Grid.ColumnSpan="2" Height="70" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,20,0,0">
             <Button Name="btn1cut" Style="{StaticResource FrameTypeButtonStyle}" FontFamily="{StaticResource VietnameseFont}" Content="1 ảnh" Click="Button_Click" Margin="10,0,0,0"/>
             <Button Name="btn2cut" Style="{StaticResource FrameTypeButtonStyle}" FontFamily="{StaticResource VietnameseFont}" Content="2 ảnh" Click="Button_Click"/>
             <Button Name="btn4cut" Style="{StaticResource FrameTypeButtonStyle}" FontFamily="{StaticResource VietnameseFont}" Content="4 ảnh" Click="Button_Click"/>
             <Button Name="btn6cut" Style="{StaticResource FrameTypeButtonStyle}" FontFamily="{StaticResource VietnameseFont}" Content="6 ảnh" Click="Button_Click"/>
             <Button Name="btn8cut" Style="{StaticResource FrameTypeButtonStyle}" FontFamily="{StaticResource VietnameseFont}" Content="8 ảnh" Click="Button_Click"/>
         </UniformGrid>
-        <Grid Name="FrameListGrid" Grid.Row="1" Grid.Column="1">
+        <Grid Name="FrameListGrid" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />

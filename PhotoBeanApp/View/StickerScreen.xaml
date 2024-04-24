@@ -22,8 +22,11 @@
             <Canvas Name="canvasSticker"  AllowDrop="True" Background="Transparent" DragOver="canvas_DragOver" Panel.ZIndex="3">
             </Canvas>
         </Grid>
-        <WrapPanel Name="wrapPanel" Grid.Column="1">
-        </WrapPanel>
-        <Button Name="ContinueButton" Content="Tiếp tục" Style="{StaticResource NextButtonStyle}" FontFamily="{StaticResource VietnameseFont}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="ContinueButton_Click" />
+        <Grid Grid.Column="1">
+            <Label Content="Stickers" FontSize="22" FontFamily="{StaticResource VietnameseFont}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"/>
+            <WrapPanel Name="wrapPanel" Grid.Column="1">
+            </WrapPanel>
+            <Button Name="ContinueButton" Content="Tiếp tục" Style="{StaticResource NextButtonStyle}" FontFamily="{StaticResource VietnameseFont}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="ContinueButton_Click" />
+        </Grid>
     </Grid>
 </UserControl>
